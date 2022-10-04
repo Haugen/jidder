@@ -5,6 +5,7 @@ import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { fetchEvents } from "../utils/api-helpers";
 import { queryKeys } from "../utils/constants";
 import Event from "../components/event";
+import ThemeToggle from "../components/theme-toggle";
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();
@@ -30,7 +31,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="text-5xl uppercase text-center my-20">Polis</h1>
+      <h1 className="text-5xl md:text-7xl xl:text-9xl uppercase text-center my-20 md:my-28">
+        Jidder
+      </h1>
+      <ThemeToggle />
 
       {data?.map((event, i) => (
         <Event key={`event_${i}`} i={i} event={event} />

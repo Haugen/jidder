@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-query";
 import { useState } from "react";
 
+import "../utils/dayjs";
 import "../styles/globals.css";
 
 function App({ Component, pageProps }: AppProps<{ dehydratedState: any }>) {
