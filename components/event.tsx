@@ -7,6 +7,7 @@ import {
 import dayjs from "dayjs";
 
 import { TEvent } from "../utils/types";
+import Container from "./container";
 
 type Props = {
   event: TEvent;
@@ -24,11 +25,7 @@ const Event = ({ event, i }: Props) => {
         { "bg-neutral-200 dark:bg-neutral-800": i % 2 === 0 }
       )}
     >
-      <div
-        className={clsx(
-          "py-5 md:py-10 lg:py-12 xl:py-16 px-7 md:px-14 max-w-[1300px] mx-auto"
-        )}
-      >
+      <Container className="py-5 md:py-10 lg:py-12 xl:py-16">
         <div className="flex justify-between h-6 items-center">
           <span className="dark:text-neutral-400 text-neutral-600">
             {dayjs(eventDate).fromNow()}
@@ -55,7 +52,7 @@ const Event = ({ event, i }: Props) => {
             <span className="ml-1 md:text-xl">{event.location.name}</span>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

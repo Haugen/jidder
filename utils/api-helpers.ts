@@ -3,9 +3,17 @@ import axios from "axios";
 import { TEvent } from "./types";
 import { config } from "./constants";
 
-export const fetchEvents = async (): Promise<TEvent[]> => {
+export const fetchEvents = async (
+  selectedLocation: string
+): Promise<TEvent[]> => {
   try {
-    const { data } = (await axios.get(config.API_URL)) as { data: TEvent[] };
+    let url = config.API_URL;
+
+    if (selectedLocation !== "Hela landet") {
+      url = `${url}?locationname=${selectedLocation}`;
+    }
+
+    const { data } = (await axios.get(url)) as { data: TEvent[] };
 
     const result = data
       .slice(0, 100)
