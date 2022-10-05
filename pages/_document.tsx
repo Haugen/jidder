@@ -5,7 +5,7 @@ export default function Document() {
   // Check out https://github.com/pacocoursey/next-themes for better theme toggle.
 
   return (
-    <Html className="dark">
+    <Html className="light">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
