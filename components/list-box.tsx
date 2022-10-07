@@ -60,11 +60,11 @@ const ListBox = ({ list, selected, setSelected }: Props) => {
                       >
                         {item}
                       </span>
-                      {selected ? (
+                      {selected && (
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
                           <CheckIcon className="h-5 w-5" aria-hidden="true" />
                         </span>
-                      ) : null}
+                      )}
                     </>
                   )}
                 </Listbox.Option>

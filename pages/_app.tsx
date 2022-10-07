@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { ThemeProvider } from "next-themes";
 
+import PageLayout from "../components/page-layout";
 import "../utils/dayjs";
 import "../styles/globals.css";
 
@@ -16,8 +17,10 @@ function App({ Component, pageProps }: AppProps<{ dehydratedState: any }>) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <ThemeProvider attribute="class">
-          <Component {...pageProps} />
+        <ThemeProvider attribute="class" enableColorScheme={false}>
+          <PageLayout>
+            <Component {...pageProps} />
+          </PageLayout>
         </ThemeProvider>
       </Hydrate>
     </QueryClientProvider>

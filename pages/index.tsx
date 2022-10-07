@@ -54,8 +54,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ThemeToggle />
-
       <Container className="py-10">
         <h1 className="text-5xl md:text-7xl xl:text-9xl uppercase my-20 md:my-28">
           Jidder
