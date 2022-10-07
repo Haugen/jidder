@@ -73,6 +73,9 @@ const Home: NextPage = () => {
             setSelected={setSelectedCategory}
           />
         </div>
+        <div className="mt-10">
+          Visar {selectedCategory} i {selectedLocation}
+        </div>
       </Container>
 
       {events?.map((event, i) => (
