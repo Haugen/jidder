@@ -5,6 +5,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { useState } from "react";
+import { ThemeProvider } from "next-themes";
 
 import "../utils/dayjs";
 import "../styles/globals.css";
@@ -15,7 +16,9 @@ function App({ Component, pageProps }: AppProps<{ dehydratedState: any }>) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Hydrate>
     </QueryClientProvider>
   );

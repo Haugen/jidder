@@ -1,13 +1,20 @@
 import clsx from "clsx";
+import { useTheme } from "next-themes";
+import useIsMounted from "../hooks/useIsMounted";
 
 const ThemeToggle = () => {
+  const isMounted = useIsMounted();
+  const { theme, setTheme } = useTheme();
+
+  if (!isMounted) return null;
+
   return (
     <div className="w-14 h-8 absolute top-4 right-4 md:top-8 md:right-8">
       <input
         type="checkbox"
         id="dark-mode-toggle"
         className="hidden"
-        onChange={() => document.documentElement.classList.toggle("dark")}
+        onChange={() => setTheme(theme === "light" ? "dark" : "light")}
       />
       <label
         htmlFor="dark-mode-toggle"

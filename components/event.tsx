@@ -15,7 +15,7 @@ type Props = {
 };
 
 const Event = ({ event, i }: Props) => {
-  // Firefox date parsing issue fix.
+  // Firefox/Safari date parsing issue fix.
   const eventDate = Date.parse(event.datetime.replace(/-/g, " "));
 
   return (
