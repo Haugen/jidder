@@ -2,8 +2,6 @@ import { Html, Head, Main, NextScript } from "next/document";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 
-import ThemeToggle from "../components/theme-toggle";
-
 export default function Document() {
   const { theme } = useTheme();
 
